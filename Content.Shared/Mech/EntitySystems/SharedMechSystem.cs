@@ -63,7 +63,7 @@ public abstract class SharedMechSystem : EntitySystem
     {
         SubscribeLocalEvent<MechComponent, MechToggleEquipmentEvent>(OnToggleEquipmentAction);
         SubscribeLocalEvent<MechComponent, MechEjectPilotEvent>(OnEjectPilotEvent);
-        SubscribeLocalEvent<MechComponent, MechCustomActionEvent>(OnCustomActionEvent);
+        SubscribeLocalEvent<MechComponent, MechMassScannerActionEvent>(OnMassScannerActionEvent);
         SubscribeLocalEvent<MechComponent, UserActivateInWorldEvent>(RelayInteractionEvent);
         SubscribeLocalEvent<MechComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<MechComponent, DestructionEventArgs>(OnDestruction);
@@ -102,7 +102,7 @@ public abstract class SharedMechSystem : EntitySystem
         TryEject(uid, component);
     }
 
-    private void OnCustomActionEvent(EntityUid uid, MechComponent component, MechCustomActionEvent args)
+    private void OnMassScannerActionEvent(EntityUid uid, MechComponent component, MechMassScannerActionEvent args)
     {
         if (args.Handled)
             return;
@@ -180,7 +180,7 @@ public abstract class SharedMechSystem : EntitySystem
         _actions.AddAction(pilot, ref component.MechUiActionEntity, component.MechUiAction, mech);
         _actions.AddAction(pilot, ref component.MechEjectActionEntity, component.MechEjectAction, mech);
         _actions.AddAction(pilot, ref component.ToggleActionEntity, component.ToggleAction, mech); //Goobstation Mech Lights toggle action
-        _actions.AddAction(pilot, ref component.MechCustomActionEntity, component.MechCustomAction, mech);
+        _actions.AddAction(pilot, ref component.MechMassScannerActionEntity, component.MechMassScannerAction, mech);
     }
 
     private void RemoveUser(EntityUid mech, EntityUid pilot)

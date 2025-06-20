@@ -61,6 +61,6 @@ public sealed partial class MechEjectPilotEvent : InstantActionEvent
 {
 }
 
-public sealed partial class MechCustomActionEvent : InstantActionEvent
+public sealed partial class MechMassScannerActionEvent : InstantActionEvent
 {
 }

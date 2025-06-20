@@ -37,7 +37,7 @@
     event: !type:MechEjectPilotEvent
 
 - type: entity
-  id: ActionMechCustomButton
+  id: ActionMechMassScannerButton
   name: Mass Scanner
   description: Scans the surrounding area for mass signatures
   components:
@@ -46,5 +46,5 @@
     icon:
       sprite: Objects/Tools/handheld_mass_scanner.rsi
       state: icon
-    event: !type:MechCustomActionEvent
+    event: !type:MechMassScannerActionEvent
     useDelay: 0.5

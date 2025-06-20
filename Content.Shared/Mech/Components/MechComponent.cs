@@ -154,7 +154,7 @@ public sealed partial class MechComponent : Component
     [DataField]
     public EntProtoId MechEjectAction = "ActionMechEject";
     [DataField]
-    public EntProtoId MechCustomAction = "ActionMechCustomButton";
+    public EntProtoId MechMassScannerAction = "ActionMechMassScannerButton";
     #endregion
 
     #region Visualizer States
@@ -170,5 +170,5 @@ public sealed partial class MechComponent : Component
     [DataField] public EntityUid? MechUiActionEntity;
     [DataField] public EntityUid? MechEjectActionEntity;
     [DataField, AutoNetworkedField] public EntityUid? ToggleActionEntity; //Goobstation Mech Lights toggle action
-    [DataField] public EntityUid? MechCustomActionEntity;
+    [DataField] public EntityUid? MechMassScannerActionEntity;
 }
